@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Nunito", sans-serif;
+}
+
+/* .color {
+    Dark-Blue-Dark-Mode-Elements: hsl(209, 23%, 22%);
+    Very-Dark-Blue-Dark-Mode-Background: hsl(207, 26%, 17%);
+    Very-Dark-Blue-Light-Mode-Text: hsl(200, 15%, 8%);
+    Dark-Gray-Light-Mode-Input: hsl(0, 0%, 52%);
+    Very-Light-Gray-Light-Mode-Background: hsl(0, 0%, 98%);
+    White-Dark-Mode-Text-Light-Mode-Elements: hsl(0, 0%, 100%);
+} */
+
+header {
+    height: 50px;
+    background-color: white;
+    box-shadow: 0 2px 3px 0 rgb(182, 177, 177);
+    display: flex;
+    justify-content: center;
+}
+
+header .headerContent {
+    max-width: 1200px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.headerContent .headerTitle {
+    font-size: 1.5em;
+    font-weight: 800;
+    text-decoration: none;
+    color: inherit;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+section{
+    max-width: 1200px;
+    width: 100%;
+}
+
+main .searchSection {
+    height: 50px;
+    /* border: 1px solid black; */
+    margin: 50px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.searchSection .searchContainer {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    max-width: 400px;
+    width: 100%;
+    /* border: 1px solid black; */
+    box-shadow: 0 0 5px 0 rgb(182, 177, 177);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.searchContainer .icon {
+    padding: 0 5px 0 20px;
+    color: hsl(0, 0%, 52%);
+}
+
+.searchContainer input {
+    flex: 1;
+    height: 100%;
+    padding: 15px;
+    border: none;
+    outline: none;
+    background: none;
+}
+
+.searchSection .filterContainer{
+    /* border: 1px solid black; */
+    box-shadow: 0 0 5px 0 rgb(182, 177, 177);
+    height: 100%;
+    width: 180px;
+    border-radius: 8px;
+}
+.filterContainer select{
+    width: 100%;
+    height: 100%;
+    padding: 0 10px;
+    font-size: 1em;
+    font-weight: 500;
+    border-radius: 8px;
+    outline: none;
+    border: none;
+}
+
+.countrySection{
+    /* border: 1px solid black; */
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    justify-content: center;
+    gap: 20px;
+
+}
+.countrySection .countryCard{
+    position: relative;
+    /* border: 1px solid black; */
+    box-shadow: 0 0 5px 0 rgb(182, 177, 177);
+    width: 250px;
+    height: 300px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.countryCard .countryCardImg{
+    /* border: 1px solid black; */
+    height: 45%;
+}
+.countryCardImg img{
+    width: 100%;
+    height: 100%;
+}
+.countryCard .countryCardDetails{
+    /* border: 1px solid black; */
+    height: 55%;
+    padding: 10px 20px;
+}
+.countryCardDetails h1{
+    margin-bottom: 10px;
+}
+.countryCardDetails div{
+    margin-top: 5px;
+}
