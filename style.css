@@ -29,6 +29,7 @@ header .headerContent {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 0 20px;
 }
 
 .headerContent .headerTitle {
@@ -51,12 +52,16 @@ section{
 }
 
 main .searchSection {
-    height: 50px;
+    /* height: 50px; */
     /* border: 1px solid black; */
-    margin: 50px 0;
+    /* margin: 50px 0; */
+    margin-top: 40px;
     display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
     align-items: center;
     justify-content: space-between;
+    padding:0 20px;
 }
 
 .searchSection .searchContainer {
@@ -78,7 +83,7 @@ main .searchSection {
 
 .searchContainer input {
     flex: 1;
-    height: 100%;
+    height: 50px;
     padding: 15px;
     border: none;
     outline: none;
@@ -88,7 +93,7 @@ main .searchSection {
 .searchSection .filterContainer{
     /* border: 1px solid black; */
     box-shadow: 0 0 5px 0 rgb(182, 177, 177);
-    height: 100%;
+    height: 50px;
     width: 180px;
     border-radius: 8px;
 }
@@ -107,9 +112,10 @@ main .searchSection {
     /* border: 1px solid black; */
     display: flex;
     flex-wrap: wrap;
-    padding: 20px;
+    padding: 20px 0;
     justify-content: center;
-    gap: 20px;
+    gap: 50px;
+    margin-top: 20px;
 
 }
 .countrySection .countryCard{
@@ -117,9 +123,11 @@ main .searchSection {
     /* border: 1px solid black; */
     box-shadow: 0 0 5px 0 rgb(182, 177, 177);
     width: 250px;
-    height: 300px;
+    max-height: 350px;
     border-radius: 8px;
     overflow: hidden;
+    color: inherit;
+    text-decoration: none;
 }
 .countryCard .countryCardImg{
     /* border: 1px solid black; */

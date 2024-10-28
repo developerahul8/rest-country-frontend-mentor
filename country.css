@@ -1,0 +1,118 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Nunito", sans-serif;
+}
+header {
+    height: 50px;
+    background-color: white;
+    box-shadow: 0 2px 3px 0 rgb(182, 177, 177);
+    display: flex;
+    justify-content: center;
+}
+
+header .headerContent {
+    max-width: 1200px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.headerContent .headerTitle {
+    font-size: 1.5em;
+    font-weight: 800;
+    text-decoration: none;
+    color: inherit;
+}
+main{
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 50px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+.backBtn{
+    position: absolute;
+    padding: 6px 20px;
+    box-shadow: 0 0 5px 0 rgb(182, 177, 177);
+    top: 50px;
+    left: 50px;
+    border-radius: 8px;
+}
+.backBtn span{
+    padding: 0 10px;
+}
+main .container{
+    max-width: 1200px;
+    width: 100%;
+    /* border: 1px solid black; */
+    min-height: 300px;
+    display: flex;
+}
+.container .countryImage{
+    /* border: 1px solid black; */
+    width: 50%;
+    height: 100%;
+    padding: 0 50px;
+}
+.countryImage img{
+    width: 100%;
+    height: 100%;
+    /* object-fit: fill; */
+}
+.container .countryDetails{
+    /* border: 1px solid black; */
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.countryName{
+    /* border: 1px solid black; */
+    /* height: 20%; */
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+}
+.countryDetail{
+    /* border: 1px solid black; */
+    /* height: 60%; */
+    display: flex;
+}
+.countryDetail .detailsArea{
+    padding: 20px 0;
+}
+.countryDetail .detailsArea p{
+    margin-bottom: 5px;
+}
+.countryDetails .left{
+    /* border: 1px solid black; */
+    width: 50%;
+}
+.countryDetails .right{
+    /* border: 1px solid black; */
+    width: 50%;
+}
+.borderCountries{
+    /* border: 1px solid black; */
+    /* height: 20%; */
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px 0;
+}
+.borderCountries a{
+    box-shadow: 0 0 5px 0 rgb(182, 177, 177);
+    padding: 6px 16px;
+    color: inherit;
+    text-decoration: none;
+    border-radius: 6px;
+}
