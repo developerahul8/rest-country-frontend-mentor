@@ -45,6 +45,7 @@ main{
     top: 50px;
     left: 50px;
     border-radius: 8px;
+    cursor: pointer;
 }
 .backBtn span{
     padding: 0 10px;

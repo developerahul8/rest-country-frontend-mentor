@@ -10,6 +10,7 @@ const topLevelDomain = document.querySelector(".topLevelDomain span");
 const currencies = document.querySelector(".currencies span");
 const languages = document.querySelector(".languages span");
 const backBtn = document.querySelector(".backBtn");
+const borderCountry = document.querySelector(".borderCountries");
 
 
 const url = new URLSearchParams(location.search);
@@ -25,14 +26,25 @@ fetch(`https://restcountries.com/v3.1/name/${countryName}`)
 .then((data) => {
     data.map((country) => {
         console.log(country);
-        console.log(Object.values(country.languages));
+        country.borders?.map((border) => {
+            fetch(`https://restcountries.com/v3.1/alpha/${border}`)
+            .then((res) => res.json())
+            .then((data) => {
+                data.map((e) => {
+                    const list = document.createElement("a");
+                    list.textContent = e.name.common
+                    list.href = `country.html?name=${e.name.common}`
+                    borderCountry.appendChild(list)
+                })
+            })
+        })
         countryImage.src = country.flags.svg;
         countryNameValue.innerText = country.name.common;
         nativeName.textContent = Object.values(country.name.nativeName)[0].common;
         population.textContent = country.population.toLocaleString("en-IN");
         region.textContent = country.region;
         subRegion.textContent = country.subregion;
-        capital.textContent = country.capital.join(", ");
+        capital.textContent = country.capital?.join(", ");
         topLevelDomain.textContent = country.tld[0];
         currencies.textContent = Object.values(country.currencies)[0].name;
         languages.textContent = Object.values(country.languages)
