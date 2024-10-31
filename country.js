@@ -1,26 +1,19 @@
 const countryContainer = document.querySelector(".container");
-const countryImage = document.querySelector(".countryImage img");
-const countryNameValue = document.querySelector(".countryName h1")
-const nativeName = document.querySelector(".nativeName span");
-const population = document.querySelector(".population span");
-const region = document.querySelector(".region span ");
-const subRegion = document.querySelector(".subRegion span ");
-const capital = document.querySelector(".capital span");
-const topLevelDomain = document.querySelector(".topLevelDomain span");
-const currencies = document.querySelector(".currencies span");
-const languages = document.querySelector(".languages span");
 const backBtn = document.querySelector(".backBtn");
-const borderCountry = document.querySelector(".borderCountries");
+const themeMode = document.querySelector(".theme");
 
 
 const url = new URLSearchParams(location.search);
 const countryName = url.get('name')
-console.log(countryName);
+
+themeMode.addEventListener("click",() => {
+    document.body.classList.toggle("darkTheme");
+})
 
 backBtn.addEventListener("click",() => {
     history.back();
 })
-// console.log(countryContainer);
+
 function countryDetailsRender(image,name,native,populationNumber,region,subregion,capitalCity,domain,currencie,language){
 
 // ------------------------------Creating Elements------------------------------------------------------------
@@ -146,7 +139,6 @@ fetch(`https://restcountries.com/v3.1/name/${countryName}`)
 .then((res) => res.json())
 .then((data) => {
     data.map((country) => {
-        console.log(country);
         const nativeName = Object.values(country.name.nativeName)[0].common;
         const population = country.population.toLocaleString("en-IN");
         const region = country.region;
@@ -155,10 +147,23 @@ fetch(`https://restcountries.com/v3.1/name/${countryName}`)
         const topLevelDomain = country.tld[0];
         const currencies = Object.values(country.currencies)[0].name;
         const languages = Object.values(country.languages);
-        console.log(languages);
         const image = country.flags.svg;
         const name = country.name.common;
         countryDetailsRender(image,name,nativeName,population,region,subRegion,capital,topLevelDomain,currencies,languages)
+
+        country.borders.map((border) => {
+            fetch(`https://restcountries.com/v3.1/alpha/${border}`)
+            .then((res) => res.json())
+            .then((data) => {
+                data.map((el) => {
+                    const countryBorders = document.createElement("a");
+                    countryBorders.textContent = el.name.common;
+                    countryBorders.href = `country.html?name = ${el.name.common}`
+                    countryContainer.children[1].children[2].appendChild(countryBorders)
+                })
+            })
+        })
+
     })
 })
 

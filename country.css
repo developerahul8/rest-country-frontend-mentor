@@ -28,8 +28,8 @@ header .headerContent {
     text-decoration: none;
     color: inherit;
 }
+
 main{
-    /* border: 1px solid black; */
     position: relative;
     width: 100%;
     height: calc(100vh - 50px);
@@ -54,13 +54,11 @@ main{
 main .container{
     max-width: 1200px;
     width: 100%;
-    /* border: 1px solid black; */
     min-height: 300px;
     display: flex;
     align-items: center;
 }
 .container .countryImage{
-    /* border: 1px solid black; */
     width: 50%;
     height: 300px;
     padding: 0 20px;
@@ -71,22 +69,17 @@ main .container{
     object-fit: contain;
 }
 .container .countryDetails{
-    /* border: 1px solid black; */
     width: 50%;
     height: 100%;
     display: flex;
     flex-direction: column;
 }
 .countryName{
-    /* border: 1px solid black; */
-    /* height: 20%; */
     display: flex;
     align-items: center;
     padding: 10px 0;
 }
 .countryDetail{
-    /* border: 1px solid black; */
-    /* height: 60%; */
     display: flex;
 }
 .countryDetail .detailsArea{
@@ -96,16 +89,12 @@ main .container{
     margin-bottom: 5px;
 }
 .countryDetails .left{
-    /* border: 1px solid black; */
     width: 50%;
 }
 .countryDetails .right{
-    /* border: 1px solid black; */
     width: 50%;
 }
 .borderCountries{
-    /* border: 1px solid black; */
-    /* height: 20%; */
     display: flex;
     align-items: center;
     flex-wrap: wrap;
@@ -129,7 +118,6 @@ main .container{
     .countryImage img{
         width: 100%;
         height: 100%;
-        /* object-fit: fill; */
     }
     .container .countryDetails{
         width: 50%;
@@ -155,7 +143,6 @@ main .container{
         width: 50%;
     }
     .borderCountries{
-        /* height: 20%; */
         display: flex;
         align-items: center;
         flex-wrap: wrap;
@@ -188,7 +175,6 @@ main .container{
         height: 100%;  
     }
     main .container{
-        /* max-width: 1200px; */
         width: 100%;
         min-height: 300px;
         padding: 80px 20px 20px 20px;
@@ -218,7 +204,6 @@ main .container{
         font-size: 1.4em;
     }
     .countryDetail{
-        /* height: 60%; */
         display: flex;
         flex-direction: column;
     }
@@ -236,7 +221,6 @@ main .container{
         width: 100%;
     }
     .borderCountries{
-        /* height: 20%; */
         display: flex;
         align-items: center;
         flex-wrap: wrap;

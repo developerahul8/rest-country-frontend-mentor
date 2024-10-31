@@ -3,10 +3,13 @@ const searchCountry = document.querySelector("#searchCountry");
 const filterMenu = document.querySelector(".filter");
 const themeMode = document.querySelector(".theme");
 const allCountryAPI = "https://restcountries.com/v3.1/all";
+let allCountryData;
+
 
 themeMode.addEventListener("click",() => {
-    document.body.classList.toggle("darkTheme");
-    console.log(document.body);
+   document.body.classList.toggle("darkTheme");
+   console.log(document.body);
+
 })
 
 function countryRender(Image,Name,Population,Region,Capital,countryPage){
@@ -62,9 +65,8 @@ function countryRender(Image,Name,Population,Region,Capital,countryPage){
 fetch(allCountryAPI)
 .then((res) => res.json())
 .then((data) => {
-    // console.log(data);
+    allCountryData = data;
     data.map((el) => {
-        // console.log(el);
         const flag = el.flags.svg;
         const name = el.name.common;
         const population = el.population.toLocaleString("en-IN")
@@ -99,11 +101,17 @@ filterMenu.addEventListener("change",(e) => {
 
 
 searchCountry.addEventListener("input",(e) => {
-    fetch(`https://restcountries.com/v3.1/name/${e.target.value}`)
-    .then((res) => res.json())
-    .then((data) => {
-        data.map((searchedCountry) => {
-
-        })
+    countryContainer.innerHTML = ""
+    const filterCountry = allCountryData.filter((searchCountry) => {
+        return searchCountry.name.common.toLowerCase().includes(e.target.value.toLowerCase())
+    });
+    filterCountry.map((el) =>{
+        const flag = el.flags.svg;
+        const name = el.name.common;
+        const population = el.population.toLocaleString("en-IN")
+        const region = el.region;
+        const capital = el.capital;
+        const countryPage = `country.html?name=${name}`
+        countryRender(flag,name,population,region,capital,countryPage);
     })
 })
